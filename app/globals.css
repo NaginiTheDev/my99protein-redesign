@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbfaf6;
+  --foreground: #14241a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.float-up { animation: floatUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes blob {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 42% 45% 55% 58%; }
+  50% { border-radius: 58% 42% 38% 62% / 55% 58% 42% 45%; }
+}
+.blob { animation: blob 14s ease-in-out infinite; }
